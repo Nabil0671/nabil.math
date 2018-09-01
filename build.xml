@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<project name="webservice.makejar" default="internal.makejar" basedir=".">
+	<property name="version" value="0.1"/>
+	<property name="src.dir" value="src"/>
+	<property name="web.dir" value="WebContent"/>
+	<property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
+	
+	<target name ="internal.makejar" description="Create a jar for the internal webservice">
+		<jar destfile="build/AddressModule-${version}.jar">
+			<fileset dir="${build.dir}">
+				<exclude name="**/Test**.class"/>
+				<exclude name="log4j.properties"/>
+			</fileset>
+		</jar>
+	</target>
+</project>
